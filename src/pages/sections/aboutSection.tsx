@@ -5,44 +5,16 @@ import { imagesArray, projectData, matrixData } from "../../data/aboutData";
 import { motion } from "framer-motion";
 export default function aboutSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const handleImageAnimation = (direction: "next" | "prev") => {
-    const imageElement = document.querySelector(
-      "image-container img"
-    ) as HTMLImageElement;
-    if (!imageElement) return;
-
-    imageElement.classList.add(
-      "transition-transform",
-      "duration-300",
-      "ease-in-out"
-    );
-
-    if (direction === "next") {
-      imageElement.style.transform = "rotateY(-180deg)";
-    } else {
-      imageElement.style.transform = "rotateY(180deg)";
-    }
-    setTimeout(() => {
-      imageElement.style.transform = "rotateY(0)";
-    });
-  };
-
   const nextImage = () => {
-    handleImageAnimation("next");
-    setTimeout(() => {
-      setCurrentImageIndex((prevIndex: number) =>
-        prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1
-      );
-    });
+    setCurrentImageIndex((prevIndex: number) =>
+      prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1
+    );
   };
+  
   const prevImage = () => {
-    handleImageAnimation("prev");
-    setTimeout(() => {
-      setCurrentImageIndex((prevIndex: number) =>
-        prevIndex === 0 ? imagesArray.length - 1 : prevIndex - 1
-      );
-    });
+    setCurrentImageIndex((prevIndex: number) =>
+      prevIndex === 0 ? imagesArray.length - 1 : prevIndex - 1
+    );
   };
   const scrollRef = useRef(null);
   return (
@@ -77,11 +49,10 @@ export default function aboutSection() {
           <div className="relative  max-w-96 max-h-96">
             <div className="absolute -inset-4 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 rounded-2xl blur-lg opacity-30 animate-pulse" />
             <div className="absolute -inset-2 bg-gradient-to-r  from-violet-400 via-purple-400 to-fuchsia-400 rounded-xl opacity-50 animate-pulse" />
-            <div className="relative rounded-lg border-violet-400/50 backdrop-blur-sm bg-black/20 border-2 max-h-80 w-full overflow-hidden image-container perspective-100">
-              <img
+            <div className="relative rounded-lg border-violet-400/50 backdrop-blur-sm bg-black/20 border-2 max-h-80 w-full overflow-hidden image-container perspective-100">              <img
                 src={imagesArray[currentImageIndex]}
                 alt="Image"
-                className="object-fill transition-transform duration-300 ease-in-out backface-hidden"
+                className="object-fill"
               />
             </div>
             <div className="border-l-2 border-t-2 absolute top-2 left-2 w-4 h-4 border-violet-400 animate-pulse" />
