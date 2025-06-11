@@ -88,7 +88,7 @@ export default function aboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ root: scrollRef }}
                 transition={{ duration: 0.5, delay: 3 * 0.1 }}
-                className="w-sm md:w-full  border rounded-lg p-3 border-violet-400/20 backdrop-blur-sm hover:shadow-violet-400/20 hover:shadow-lg ease-out hover:scale-[1.02]  transition-all duration-200 hover:cursor-pointer"
+                className="w-full md:w-full  border rounded-lg p-3 border-violet-400/20 backdrop-blur-sm hover:shadow-violet-400/20 hover:shadow-lg ease-out hover:scale-[1.02]  transition-all duration-200 hover:cursor-pointer"
               >
                 <div className="flex flex-row items-center justify-start gap-5">
                   <div className="border rounded-lg p-3 bg-gradient-to-r from-violet-600 to-violet-400">
@@ -128,13 +128,15 @@ export default function aboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ root: scrollRef }}
                 transition={{ duration: 0.5, delay: 3 * 0.1 }}
-                className="flex flex-col items-center justify-center  md:max-w-40  md:max-h-32 gap-2 border rounded-lg border-violet-400/20 hover:shadow-lg backdrop-blur-sm ease-out transition-all hover:shadow-violet-400/20 hover:scale-[1.02] hover:cursor-pointer p-4"
+                className="flex flex-col items-center justify-center w-full   gap-2 border rounded-lg border-violet-400/20 hover:shadow-lg backdrop-blur-sm ease-out transition-all hover:shadow-violet-400/20 hover:scale-[1.02] hover:cursor-pointer p-4"
               >
                 <project.icon className="text-violet-400 h-6 w-6" />
                 <h1 className="text-white text-xl font-bold">
                   {project.number} <span>+</span>
                 </h1>
-                <p className="text-xs text-gray-400 text-center">{project.desciption}</p>
+                <p className="text-xs text-gray-400 text-center">
+                  {project.desciption}
+                </p>
               </motion.div>
             ))}
           </div>
