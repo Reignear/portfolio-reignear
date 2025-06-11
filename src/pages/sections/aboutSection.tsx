@@ -81,7 +81,7 @@ export default function aboutSection() {
               Personal Data Matrix
             </h1>
           </motion.div>
-          <div className="grid grid-rows-3 gap-5 w-sm md:min-w-lg">
+          <div className="grid grid-rows-3 gap-5 w-full md:min-w-lg">
             {matrixData.map((data) => (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
