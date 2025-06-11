@@ -88,7 +88,7 @@ export default function aboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ root: scrollRef }}
                 transition={{ duration: 0.5, delay: 3 * 0.1 }}
-                className="w-full md:w-full  border rounded-lg p-3 border-violet-400/20 backdrop-blur-sm hover:shadow-violet-400/20 hover:shadow-lg ease-out hover:scale-[1.02]  transition-all duration-200 hover:cursor-pointer"
+                className="w-full  border rounded-lg p-3 border-violet-400/20 backdrop-blur-sm hover:shadow-violet-400/20 hover:shadow-lg ease-out hover:scale-[1.02]  transition-all duration-200 hover:cursor-pointer"
               >
                 <div className="flex flex-row items-center justify-start gap-5">
                   <div className="border rounded-lg p-3 bg-gradient-to-r from-violet-600 to-violet-400">
