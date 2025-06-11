@@ -18,7 +18,7 @@ const Header = ({ title, NavItem }: HeaderProps) => {
   };
   return (
     <>
-      <header className=" top-0 h-12 flex-row justify-between pl-25 pr-25 bg-transparent pt-2 pb-2 backdrop-blur-sm md:flex hidden">
+      <header className="sticky z-1 top-0 h-12 flex-row justify-between pl-25 pr-25 bg-transparent pt-2 pb-2 backdrop-blur-sm md:flex hidden shadow-lg shadow-violet-400/20 border-b border-violet-400/20">
         <div className="flex items-center justify-start z-10 hover:cursor-pointer">
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -34,7 +34,7 @@ const Header = ({ title, NavItem }: HeaderProps) => {
         <div className="flex items-center justify-end">
           <ul className="flex ">
             {NavItem.map((item) => (
-              <li className="text-base text-gray-300 px-4 py-2  relative z-10">
+              <li className="text-sm text-gray-300 px-4 py-2  relative z-10 hover:bg-gradient-to-r hover:from-violet-400 hover:via-purple-400 hover:to-fuchsia-400 hover:bg-clip-text hover:text-transparent transition-all duration-300">
                 <a href={item.href}>{item.title}</a>
               </li>
             ))}

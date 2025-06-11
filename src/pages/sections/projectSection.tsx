@@ -24,7 +24,7 @@ export default function projectSection() {
         <div className="h-full max-w-3/4 grid grid-cols-1 md:grid-cols-2 gap-4">
           {projectData.map((project) => (
             <div
-              className="flex flex-col bg-gradient-to-t from-black/20 to-black/30 border border-violet-400/20 rounded-lg group relative backdrop-blur-sm   h-full md:h-[600px] hover:cursor-pointer hover:shadow-violet-400/20 hover:shadow-lg ease-out hover:scale-[1.02]  transition-all duration-200  md:pb-5"
+              className="flex flex-col bg-gradient-to-t from-black/20 to-black/30 border border-violet-400/20 rounded-lg group relative backdrop-blur-sm   h-full md:h-[600px] hover:cursor-pointer hover:shadow-violet-400/20 hover:shadow-lg ease-out hover:scale-[1.02]  transition-all duration-200  md:pb-10"
               key={project.id}
             >
               <div className="h-1/2 overflow-hidden rounded-t-lg">
@@ -34,7 +34,7 @@ export default function projectSection() {
                   className="object-fill w-full h-full"
                 />
               </div>
-              <div className="h-fit md:h-1/2 p-4 flex flex-col">
+              <div className="h-fit md:h-1/2 p-4 flex flex-col ">
                 <h1 className="text-white text-xl font-bold">
                   {project.title}
                 </h1>
@@ -58,9 +58,11 @@ export default function projectSection() {
                   </div>
                   <div className="flex flex-row gap-5 items-center ">
                     <button
-                      className={`text-violet-400 hover:cursor-pointer ${
-                        project.codeStatus === "Private" ? "disabled" : ""
-                      }`}
+                      className="text-violet-400 hover:cursor-pointer "
+                      disabled={
+                        project.codeStatus.toLowerCase() ===
+                        "Private".toLowerCase()
+                      }
                     >
                       <a href={project.codeLink}>
                         <CodeXml className="h-4 w-4 animate-bounce" />

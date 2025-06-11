@@ -1,12 +1,4 @@
-import {
-  Github,
- 
-  Instagram,
-  Linkedin,
-  Mail,
-  Facebook,
- 
-} from "lucide-react";
+import { Github, Instagram, Linkedin, Mail, Facebook } from "lucide-react";
 
 export const footerNav = [
   { title: "Home", href: "#home" },
@@ -30,6 +22,6 @@ export const socialLinks = [
 export const stack = [
   "React TypeScript",
   "Tailwind CSS",
-  "Motion Framer",
+  "Framer Motion",
   "ShadCN UI",
 ];
