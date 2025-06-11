@@ -14,7 +14,7 @@ const educationSection = () => {
       transition={{ duration: 0.5, delay: 3 * 0.1 }}
     >
       <div className="flex flex-col items-center justify-center h-full w-full gap-4 mb-10">
-        <h1 className="bg-gradient-to-r from-violet-400 via-purple-500 to-fuchsia-400 bg-clip-text text-5xl font-bold text-transparent p-2">
+        <h1 className="bg-gradient-to-r from-violet-400 via-purple-500 to-fuchsia-400 bg-clip-text text-5xl font-bold text-transparent p-2 text-center">
           Educational Matrix
         </h1>
         <div className="w-24 h-1 rounded-full bg-gradient-to-r from-violet-400 via-purple-400 to-fuchsia-400" />
@@ -49,7 +49,7 @@ const educationSection = () => {
                         <h1 className="text-2xl font-bold text-white md:text-start text-center">
                           {education.program}
                         </h1>
-                        <div className="flex flex-col md:flex-row items-center">
+                        <div className="flex flex-col md:flex-row items-center text-center">
                           <p className="text-gray-400 text-sm font-medium">
                             {education.university}
                             <span>{"\u00A0\u2022\u00A0"}</span>
@@ -89,9 +89,7 @@ const educationSection = () => {
                       </div>
                     </div>
                     <div className="text-gray-300 mb-5 mt-5 ">
-                      <p className="md:text-start text-justify">
-                        {education.desciption}
-                      </p>
+                      <p className=" text-start md:text-base text-sm">{education.desciption}</p>
                     </div>
                     <div className="flex flex-col gap-2">
                       <div className="flex flex-row gap-2">
@@ -104,9 +102,11 @@ const educationSection = () => {
                         {education.achievements.map((achievement) => (
                           <div
                             key={achievement}
-                            className="flex flex-row items-center min-w-64 justify-center border border-violet-400/20 min-h-8 pl-2 pr-2 rounded-lg bg-gradient-to-r from-violet-600/20 to-purple-600/20"
+                            className="flex flex-row items-center min-w-20 md:min-w-64 justify-center border border-violet-400/20 min-h-8 pl-2 pr-2 rounded-lg bg-gradient-to-r from-violet-600/20 to-purple-600/20"
                           >
-                            <p className="text-white">{achievement}</p>
+                            <p className="text-white text-[12px] md:text-base ">
+                              {achievement}
+                            </p>
                           </div>
                         ))}
                       </div>

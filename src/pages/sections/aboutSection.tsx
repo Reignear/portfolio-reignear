@@ -10,7 +10,7 @@ export default function aboutSection() {
       prevIndex === imagesArray.length - 1 ? 0 : prevIndex + 1
     );
   };
-  
+
   const prevImage = () => {
     setCurrentImageIndex((prevIndex: number) =>
       prevIndex === 0 ? imagesArray.length - 1 : prevIndex - 1
@@ -34,7 +34,7 @@ export default function aboutSection() {
 
       <div className="md:grid md:grid-cols-2 flex flex-col items-center justify-center ">
         <motion.div
-          className="flex flex-row items-center justify-center md:gap-5 gap-3"
+          className="flex flex-row items-center justify-center gap-x-5"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ root: scrollRef }}
@@ -46,19 +46,21 @@ export default function aboutSection() {
           >
             <ChevronLeft className="text-violet-400 h-6 w-6" />
           </div>
-          <div className="relative  max-w-96 max-h-96">
+          <div className="relative max-w-52 max-h-52 md:max-w-96 md:max-h-96">
             <div className="absolute -inset-4 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 rounded-2xl blur-lg opacity-30 animate-pulse" />
             <div className="absolute -inset-2 bg-gradient-to-r  from-violet-400 via-purple-400 to-fuchsia-400 rounded-xl opacity-50 animate-pulse" />
-            <div className="relative rounded-lg border-violet-400/50 backdrop-blur-sm bg-black/20 border-2 max-h-80 w-full overflow-hidden image-container perspective-100">              <img
+            <div className="relative rounded-lg border-violet-400/50 backdrop-blur-sm bg-black/20 border-2 max-h-80 w-full overflow-hidden image-container perspective-100">
+              {" "}
+              <img
                 src={imagesArray[currentImageIndex]}
                 alt="Image"
                 className="object-fill"
               />
             </div>
-            <div className="border-l-2 border-t-2 absolute top-2 left-2 w-4 h-4 border-violet-400 animate-pulse" />
-            <div className="border-l-2 border-b-2 absolute bottom-2 left-2 w-4 h-4 border-violet-400 animate-pulse" />
-            <div className="border-r-2 border-t-2 absolute top-2 right-2 w-4 h-4 border-violet-400 animate-pulse" />
-            <div className="border-r-2 border-b-2 absolute bottom-2 right-2 w-4 h-4 border-violet-400 animate-pulse" />
+            <div className="border-l-2 border-t-2 absolute top-2 left-2 md:w-4 md:h-4 w-3 h-3 border-violet-400 animate-pulse" />
+            <div className="border-l-2 border-b-2 absolute bottom-2 left-2 md:w-4 md:h-4 w-3 h-3  border-violet-400 animate-pulse" />
+            <div className="border-r-2 border-t-2 absolute top-2 right-2 md:w-4 md:h-4 w-3 h-3 border-violet-400 animate-pulse" />
+            <div className="border-r-2 border-b-2 absolute bottom-2 right-2 md:w-4 md:h-4 w-3 h-3 border-violet-400 animate-pulse" />
           </div>
           <div
             className="border-2 md:h-14 md:w-14 h-10 w-10 rounded-full flex items-center justify-center border-violet-400/50 hover:cursor-pointer hover:scale-[1.03] ease-out transition-all backdrop-blur-sm"
@@ -67,7 +69,7 @@ export default function aboutSection() {
             <ChevronRight className="h-6 w-6 text-violet-400 " />
           </div>
         </motion.div>
-        <div className="flex flex-col items-center md:items-baseline  max-w-1/2 md:mt-0">
+        <div className="flex flex-col items-center md:items-baseline  max-w-full md:mt-0 px-4 md:px-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +110,7 @@ export default function aboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ root: scrollRef }}
             transition={{ duration: 0.5, delay: 3 * 0.1 }}
-            className="min-w-sm md:min-w-lg mt-5 border border-violet-400/20 rounded-lg p-6 bg-gradient-to-r from-violet-900/20 to-purple-900/20 backdrop-blur-sm hover:shadow-lg hover:scale-[1.02] ease-out hover:shadow-violet-400/20 transition-all"
+            className="min-w-sm md:min-w-lg  mt-5 border border-violet-400/20 rounded-lg p-6 bg-gradient-to-r from-violet-900/20 to-purple-900/20 backdrop-blur-sm hover:shadow-lg hover:scale-[1.02] ease-out hover:shadow-violet-400/20 transition-all"
           >
             <p className="text-justify text-gray-300 leading-relaxed">
               I am a dedicated Computer Scientist, currently immersed in the
@@ -119,20 +121,20 @@ export default function aboutSection() {
               functional code.
             </p>
           </motion.div>
-          <div className="min-w-md md:min-w-lg gap-2 grid grid-cols-3 mt-6 my-5 ">
+          <div className="w-full md:min-w-lg gap-2 grid grid-cols-3 mt-6 my-5">
             {projectData.map((project) => (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ root: scrollRef }}
                 transition={{ duration: 0.5, delay: 3 * 0.1 }}
-                className="flex flex-col items-center justify-center max-w-40 min-h-32 gap-2 border rounded-lg border-violet-400/20 hover:shadow-lg backdrop-blur-sm ease-out transition-all hover:shadow-violet-400/20 hover:scale-[1.02] hover:cursor-pointer p-4"
+                className="flex flex-col items-center justify-center  md:max-w-40  md:max-h-32 gap-2 border rounded-lg border-violet-400/20 hover:shadow-lg backdrop-blur-sm ease-out transition-all hover:shadow-violet-400/20 hover:scale-[1.02] hover:cursor-pointer p-4"
               >
                 <project.icon className="text-violet-400 h-6 w-6" />
                 <h1 className="text-white text-xl font-bold">
                   {project.number} <span>+</span>
                 </h1>
-                <p className="text-xs text-gray-400">{project.desciption}</p>
+                <p className="text-xs text-gray-400 text-center">{project.desciption}</p>
               </motion.div>
             ))}
           </div>

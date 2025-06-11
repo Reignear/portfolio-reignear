@@ -50,13 +50,13 @@ export default function projectSection() {
                     </div>
                   ))}
                 </div>
-                <div className="flex flex-row h-full items-end justify-between gap-5 my-5">
+                <div className="flex flex-row h-full items-end justify-between gap-5 md:my-5 ">
                   <div>
                     <p className="text-sm text-violet-400">
                       {project.codeStatus}
                     </p>
                   </div>
-                  <div className="flex flex-row gap-5 items-center">
+                  <div className="flex flex-row gap-5 items-center ">
                     <button
                       className={`text-violet-400 hover:cursor-pointer ${
                         project.codeStatus === "Private" ? "disabled" : ""
